@@ -1,2 +1,2 @@
-## Problem trgovačkog putnika - usporedba različitih rješenja 
+## Rješavanje problema trgovačkog putnika primjenom samo-organizirajućih mapa 
 
