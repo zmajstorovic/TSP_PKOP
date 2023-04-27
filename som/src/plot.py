@@ -36,7 +36,7 @@ def plot_route(cities, route, name='diagram.png', ax=None):
         axis = fig.add_axes([0,0,1,1])
 
         axis.set_aspect('equal', adjustable='datalim')
-        plt.axis('off')
+        plt.axis('on')
 
         axis.scatter(cities['x'], cities['y'], color='red', s=4)
         route = cities.reindex(route)

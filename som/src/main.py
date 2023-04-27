@@ -172,7 +172,7 @@ def som(problem, iterations, learning_rate=0.8):
 
         # Check for plotting interval
         if not i % 1000:
-            plot_network(cities, network, name='diagram/{:05d}+_'+str(len(cities))+'.png'.format(i))
+            plot_network(cities, network, name='diagram/'+str(i)+'_'+str(len(cities))+'.png')
 
         # Check if any parameter has completely decayed.
         if n < 1:

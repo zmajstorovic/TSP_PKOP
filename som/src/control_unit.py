@@ -3,7 +3,7 @@ import time
 import numpy as np
 import som.src.main as som
 import csv
-
+import matplotlib.pyplot as  plt
 # def timer(state):
 #     #start
 #     duration = 0
@@ -42,8 +42,6 @@ def csv_writer(data_entry, option):
         if option is 'header':
             # write the header
             writer.writerow(header)
-
-
             # write the data
         writer.writerow(data)
 
@@ -51,7 +49,39 @@ def csv_writer(data_entry, option):
 
 # problem_size = 800
 
+with open('10k.tsp', mode='r', encoding='utf-8') as infile:
+    bulk = infile.read().split('\n')
+    gradovi = {}
+    for i in range(7, len(bulk) - 1, 1):
+        k1 = bulk[i].split(' ')[2]
+        k2 = bulk[i].split(' ')[1]
+        g = bulk[i].split(' ')[0]
+        # gradovi[g] = [math.trunc(float(k1)*100), math.trunc(float(k2)*100)]
+        gradovi[g] = [int(k1), int(k2)]
+    k = list(gradovi.values())
+    # for items in k:
+    #     print(math.trunc(items[0]*100))
+
+    koordinate = [tuple(l) for l in k]
+x, y =[], []
+koordinate[0]
+for p in pr:
+    print(koordinate[0:p])
+    a = koordinate[0:p]
+    x, y = zip(*a)
+    # for pairs in koordinate[0:p]:
+    #     x.append(pairs[0])
+    #     y.append(pairs[1])
+    plt.figure(figsize=(6, 6))
+    plt.scatter(x, y)
+    plt.title(str(p)+' lokacija')
+    # plt.show()
+    plt.savefig('C:\\Users\\zmajstorovic\\Documents\\QL_TSP\\Test_scenariji\\'+str(p)+'_lokacija.png')
+    x, y = [], []
+quit()
 for problem_size in pr:
+
+
 
     #Pokreni gotools
 

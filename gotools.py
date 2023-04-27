@@ -103,15 +103,19 @@ import matplotlib.pyplot as plt
 def nx_net(lokacije, redoslijed, algo):
 
     x, y = [], []
+    plt.figure(figsize=(6, 6))
     # Presloži listu
     for i in redoslijed:
         x.append(lokacije[int(i)][0])
         y.append(lokacije[int(i)][1])
     for i in range(0, len(x), 1):
+
         plt.plot(x[i:i + 2], y[i:i + 2], 'r.-')
     plt.title(algo+'_'+str(len(x)-1))
+
     plt.savefig('C:\\Users\\zmajstorovic\\Documents\\QL_TSP\\Go_figs\\'+str(algo+'_'+str(len(x)-1))+'.png')
     plt.show()
+
 
 
 def create_data_model(l):
@@ -133,7 +137,7 @@ def create_data_model(l):
             koordinate = [tuple(l) for l in k]
 
 
-        return koordinate[3000:3000+l]
+        return koordinate[0:l]
     # lokacije = tsp_read()
 
 
