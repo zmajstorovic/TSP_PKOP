@@ -4,20 +4,7 @@ import numpy as np
 import som.src.main as som
 import csv
 import matplotlib.pyplot as  plt
-# def timer(state):
-#     #start
-#     duration = 0
-#     if state is 'start':
-#         start = time.time()
-#     #stop
-#     if state is 'stop':
-#         stop = time.time()
-#     #reset
-#     if state is 'reset':
-#         start, stop = 0, 0
-#     if state is 'duration':
-#         duration = start-stop
-#         return duration
+
 st = 10
 pr = []
 
@@ -69,9 +56,6 @@ for p in pr:
     print(koordinate[0:p])
     a = koordinate[0:p]
     x, y = zip(*a)
-    # for pairs in koordinate[0:p]:
-    #     x.append(pairs[0])
-    #     y.append(pairs[1])
     plt.figure(figsize=(6, 6))
     plt.scatter(x, y)
     plt.title(str(p)+' lokacija')
@@ -79,13 +63,12 @@ for p in pr:
     plt.savefig('C:\\Users\\zmajstorovic\\Documents\\QL_TSP\\Test_scenariji\\'+str(p)+'_lokacija.png')
     x, y = [], []
 quit()
+
 for problem_size in pr:
 
 
 
     #Pokreni gotools
-
-
     s = time.time()
     C_ortools_distance = gotools.main(problem_size, 'christofides')
     e = time.time()
